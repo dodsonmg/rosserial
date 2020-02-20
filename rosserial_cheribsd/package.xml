@@ -1,8 +1,8 @@
 <package>
-  <name>rosserial_embeddedlinux</name>
+  <name>rosserial_cheribsd</name>
   <version>0.8.0</version>
   <description>
-    rosserial for embedded Linux enviroments
+    rosserial for freebsd and cheribsd enviroments
   </description>
   <author>Paul Bouchier</author>
   <maintainer email="paul.bouchier@gmail.com">Paul Bouchier</maintainer>

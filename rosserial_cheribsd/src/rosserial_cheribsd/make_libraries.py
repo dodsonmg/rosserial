@@ -33,13 +33,13 @@
 # ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-THIS_PACKAGE = "rosserial_embeddedlinux"
+THIS_PACKAGE = "rosserial_cheribsd"
 
 __usage__ = """
 make_libraries.py generates the rosserial library files.  It
 requires the location of your project folder.
 
-rosrun rosserial_embeddedlinux make_libraries.py <output_path>
+rosrun rosserial_cheribsd make_libraries.py <output_path>
 """
 
 import rospkg
