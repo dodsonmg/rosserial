@@ -46,7 +46,8 @@
 
 namespace ros
 {
-typedef NodeHandle_<EmbeddedLinuxHardware> NodeHandle;
+// set max publishers, subscribers, and buffer sizes (1024 to support turtlebot3 msgs)
+typedef NodeHandle_<EmbeddedLinuxHardware, 25, 25, 1024, 1024> NodeHandle;
 }
 
 #endif
