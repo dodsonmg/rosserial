@@ -47,6 +47,10 @@ extern "C" elCommWrite(int fd, uint8_t* data, int length);
 #include <time.h>
 #endif
 
+#ifdef __FreeBSD__
+#include <time.h>
+#endif
+
 // Includes necessary to support time on OS X.
 #ifdef __MACH__
 #include <mach/mach.h>
@@ -142,6 +146,25 @@ public:
     return ((seconds) * 1000 + nseconds / 1000000.0) + 0.5;
   }
 
+#elif __FreeBSD__
+  void initTime()
+  {
+    clock_gettime(CLOCK_MONOTONIC, &start);
+  }
+
+  unsigned long time()
+  {
+    struct timespec end;
+    long seconds, nseconds;
+
+    clock_gettime(CLOCK_MONOTONIC, &end);
+
+    seconds  = end.tv_sec  - start.tv_sec;
+    nseconds = end.tv_nsec - start.tv_nsec;
+
+    return ((seconds) * 1000 + nseconds / 1000000.0) + 0.5;
+  }
+
 #elif __MACH__
   void initTime()
   {
@@ -163,6 +186,8 @@ protected:
   long baud_;
 
 #ifdef __linux__
+  struct timespec start;
+#elif __FreeBSD__
   struct timespec start;
 #elif __MACH__
   uint64_t start;
