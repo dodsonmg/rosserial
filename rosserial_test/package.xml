@@ -4,7 +4,7 @@
   <version>0.8.0</version>
   <description>
     A specialized harness which allows end-to-end integration testing of the
-    rosserial client and server components.
+    rosserial client component.
   </description>
 
   <maintainer email="mpurvis@clearpath.ai">Mike Purvis</maintainer>
@@ -18,7 +18,6 @@
   <depend>rosserial_client</depend>
   <depend>rosserial_msgs</depend>
   <depend>rosserial_python</depend>
-  <depend>rosserial_server</depend>
   <depend>rostest</depend>
   <depend>std_msgs</depend>
  </package>
