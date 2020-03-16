@@ -51,6 +51,10 @@
 #include <netdb.h>
 #include <assert.h>
 
+// required to compile this file directly rather than include it in ros.h
+#include "embedded_linux_hardware.h"
+
+
 #define DEFAULT_PORTNUM 11411
 
 void error(const char *msg)
