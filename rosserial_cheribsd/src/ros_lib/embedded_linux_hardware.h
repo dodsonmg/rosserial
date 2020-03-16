@@ -38,7 +38,7 @@
 #include <iostream>
 
 #ifdef BUILD_LIBROSSERIALEMBEDDEDLINUX
-extern "C" int elCommInit(char *portName, int baud);
+extern "C" int elCommInit(const char *portName, int baud);
 extern "C" int elCommRead(int fd);
 extern "C" int elCommWrite(int fd, uint8_t* data, int length);
 #endif
